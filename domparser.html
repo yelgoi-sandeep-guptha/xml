@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+</head>
+<body>
+    <p id="a1"></p>
+    <script>
+    var text,parser,xmlDoc;
+    text="<bookstore><book>"+
+    "<title>Every Day</title>"+
+    "<author>Gaida De </author>"
+    "</book></bookstore>";
+
+    parser=new DOMParser();
+    xmlDoc=parser.parseFromString(text,"text/xml");
+    document.getElementById("a1").innerHTML=xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+    </script>
+</body>
